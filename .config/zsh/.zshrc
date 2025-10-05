@@ -70,11 +70,15 @@ ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
-HISTFILE=$ZDOTDIR/.zsh_history
-setopt HIST_IGNORE_DUPS
 
-# HISTSIZE=10000
-# SAVEHIST=10000
+HISTFILE="$XDG_CACHE_HOME/zsh/.zhistory"
+# Maximum events for internal history buffer in memory.
+HISTSIZE=10000
+# Maximum events for internal history saved in the history file. 
+SAVEHIST=10000
+# History options.
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM="$ZDOTDIR/omz-custom"

@@ -1,0 +1,10 @@
+# Ignore system-specific files
+.history
+.local
+.cache
+
+# Zsh stuff
+.zsh_sessions/
+.zsh_history
+.zhistory
+.zcompdump
