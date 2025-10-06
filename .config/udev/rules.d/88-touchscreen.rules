@@ -1,0 +1,14 @@
+# Dynamic Device Management
+# Disable touchscreen via udev rule
+##
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04f3", ATTRS{idProduct}=="226c", ATTR{authorized}="0"
+
+# 
+## find this tip at (https://askubuntu.com/a/1011125)
+## place this rule here: /etc/udev/rules.d/*.rules
+#
+## You can find idVendor and idProduct by running
+#> cat /proc/bus/input/devices
+## You can reload the rules without restart
+
+#> sudo udevadm control --reload-rules && sudo udevadm trigger

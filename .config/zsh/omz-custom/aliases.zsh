@@ -9,6 +9,9 @@ alias down="cd $HOME/Downloads/"
 alias codedir="cd $HOME/Code/"
 alias vimz="nvim $ZDOTDIR/.zshrc"
 alias vimalias="nvim $ZSH_CUSTOM/aliases.zsh"
+alias vimkit="nvim $HOME/.config/kitty/kitty.conf"
+alias vimgho="nvim $HOME/.config/ghostty/config"
+alias confdir="cd $HOME/.config/"
 
 alias ff="fastfetch"
 alias bat="batcat"
@@ -23,7 +26,6 @@ alias fpfix="flatpak repair"
 
 #
 ## eza
-
 alias l="eza -l -a --icons -G --time-style=relative -h --sort=newest"
 alias ll="eza -l -a --icons --reverse"
 alias lmod="eza -a --icons -G --sort=modified -h"
