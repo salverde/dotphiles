@@ -33,3 +33,9 @@ alias lll="eza -l -h -G --icons --time-style=relative --sort=oldest"
 
 alias lg="lazygit"
 alias mybtm="btm -f --battery"
+
+# ohmyzsh
+alias omzpluginfo="omz plugin info"
+alias omzplugen="omz plugin enable"
+alias omzplugs="echo $plugins"
+alias omzplugls="omz plugin list | less"
