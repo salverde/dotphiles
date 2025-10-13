@@ -88,7 +88,7 @@ ZSH_CUSTOM="$ZDOTDIR/omz-custom"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract ubuntu zsh-navigation-tools sudo fzf tldr volta copybuffer genpass copypath copyfile)
+plugins=(git extract ubuntu zsh-navigation-tools sudo fzf tldr volta copybuffer genpass copypath copyfile colored-man-pages isodate)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,3 +132,6 @@ autoload -Uz compinit && compinit
 
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+
+# bun completions
+[ -s "/home/s13e/.bun/_bun" ] && source "/home/s13e/.bun/_bun"

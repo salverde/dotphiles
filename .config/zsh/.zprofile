@@ -24,3 +24,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 # golang
 export PATH=$PATH:/usr/local/go/bin
+
+# bun
+export BUN_INSTALL="$HOME/.bun" 
+export PATH="$BUN_INSTALL/bin:$PATH"

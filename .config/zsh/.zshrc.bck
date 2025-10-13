@@ -71,15 +71,24 @@ ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
+HISTFILE="$XDG_CACHE_HOME/zsh/.zhistory"
+# Maximum events for internal history buffer in memory.
+HISTSIZE=10000
+# Maximum events for internal history saved in the history file. 
+SAVEHIST=10000
+# History options.
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM="$ZDOTDIR/omz-custom"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract ubuntu zsh-navigation-tools sudo fzf tldr volta copybuffer genpass copypath)
+plugins=(git extract ubuntu zsh-navigation-tools sudo fzf tldr volta copybuffer genpass copypath copyfile colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,11 +100,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -106,25 +115,20 @@ source $ZSH/oh-my-zsh.sh
 # the $ZSH_CUSTOM folder, with .zsh extension. Examples:
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $HOME/.config/fzf/.fzf.zsh ] && source $HOME/.config/fzf/.fzf.zsh
 
 # add custom completions (eg. _volta, etc.)
-fpath=(~/.zsh/completions $fpath)
+fpath=($ZDOTDIR/completions $fpath)
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' completions 1
-zstyle :compinstall filename '/home/s13e/.zshrc'
+zstyle :compinstall filename '$ZDOTDIR/.zshrc'
 autoload -Uz compinit && compinit
 # End of lines added by compinstall
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
