@@ -7,9 +7,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -74,7 +71,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 HISTFILE="$XDG_CACHE_HOME/zsh/.zhistory"
 # Maximum events for internal history buffer in memory.
 HISTSIZE=10000
-# Maximum events for internal history saved in the history file. 
+# Maximum events for internal history saved in the history file.
 SAVEHIST=10000
 # History options.
 setopt HIST_IGNORE_ALL_DUPS
@@ -83,7 +80,6 @@ setopt HIST_SAVE_NO_DUPS
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM="$ZDOTDIR/omz-custom"
 
-# Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -106,16 +102,6 @@ else
   export EDITOR='nvim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch $(uname -m)"
-
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-
 [ -f $HOME/.config/fzf/.fzf.zsh ] && source $HOME/.config/fzf/.fzf.zsh
 
 # add custom completions (eg. _volta, etc.)
@@ -128,10 +114,12 @@ autoload -Uz compinit && compinit
 # End of lines added by compinstall
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
+[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
 
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+[ -f /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh
+[ -f /usr/local/share/chruby/auto.sh ]  && source /usr/local/share/chruby/auto.sh
 
 # bun completions
-[ -s "/home/s13e/.bun/_bun" ] && source "/home/s13e/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
