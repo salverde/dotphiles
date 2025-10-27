@@ -16,7 +16,7 @@ export FZF_DEFAULT_OPTS="
   --layout='reverse' --info='right' --height='40%'"
 
 
-  export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
-  export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
-  source $HOME/.config/fzf/.fzf.flatpak.zsh
+source $XDG_CONFIG_HOME/fzf/.fzf.flatpak.zsh
