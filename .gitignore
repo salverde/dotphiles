@@ -7,4 +7,4 @@
 .zsh_sessions/
 .zsh_history
 .zhistory
-.zcompdump
+.zcompdump*

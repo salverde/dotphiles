@@ -10,3 +10,5 @@ tmp_config.json
 # Assets
 images
 README.md
+
+.zcompdump*
