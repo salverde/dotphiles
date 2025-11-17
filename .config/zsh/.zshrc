@@ -1,4 +1,14 @@
 
+if [[ -n "$KITTY_INSTALLATION_DIR" ]]; then
+  export KITTY_SHELL_INTEGRATION="enabled"
+  autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
+  kitty-integration
+  unfunction kitty-integration
+fi
+
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/s13e/.config/zsh/completions:"* ]]; then export FPATH="/home/s13e/.config/zsh/completions:$FPATH"; fi
+
 [ -x /usr/bin/fastfetch ] && fastfetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -84,7 +94,7 @@ ZSH_CUSTOM="$ZDOTDIR/omz-custom"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract ubuntu zsh-navigation-tools sudo fzf tldr volta copybuffer genpass copypath copyfile colored-man-pages isodate)
+plugins=(git extract ubuntu zsh-navigation-tools sudo fzf tldr volta copybuffer genpass copypath copyfile colored-man-pages isodate systemd zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,6 +119,7 @@ fpath=($ZDOTDIR/completions $fpath)
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' completions 1
+zstyle ':completion:*' menu select
 zstyle :compinstall filename '$ZDOTDIR/.zshrc'
 autoload -Uz compinit && compinit
 # End of lines added by compinstall
@@ -123,3 +134,4 @@ autoload -Uz compinit && compinit
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+. "/home/s13e/.deno/env"
