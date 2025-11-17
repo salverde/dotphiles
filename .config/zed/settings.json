@@ -7,6 +7,8 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "base_keymap": "SublimeText",
+  "agent_buffer_font_size": 14.0,
   "edit_predictions": {
     "disabled_globs": [
       "**/.git",
@@ -274,14 +276,14 @@
     "dock": "right"
   },
   "ui_font_size": 13,
-  "buffer_font_size": 15,
-  "buffer_font_family": "CaskaydiaMono Nerd Font Mono",
-  "ui_font_family": "Reddit Sans",
+  "buffer_font_size": 13.0,
+  "buffer_font_family": "Caskaydia Cove Nerd Font",
+  "ui_font_family": "Play",
   "autosave": "on_focus_change",
   "theme": {
     "mode": "dark",
     "light": "Catppuccin Latte - No Italics",
-    "dark": "1984 Cyberpunk"
+    "dark": "The Batman"
   },
   "search": {
     "whole_word": false,

@@ -12,16 +12,21 @@ alias vimalias="nvim $ZSH_CUSTOM/aliases.zsh"
 alias vimkit="nvim $HOME/.config/kitty/kitty.conf"
 alias vimgho="nvim $HOME/.config/ghostty/config"
 alias confdir="cd $HOME/.config/"
-
+alias locshapps="cd $HOME/.local/share/applications/"
+alias usrshapps="cd /usr/share/applications/"
 alias ff="fastfetch"
 alias bat="batcat"
 
+alias apts="sudo apt search"
+
+alias ytdl="yt-dlp_linux"
 # flatpak
 #
 alias fp="flatpak"
 alias fpls="flatpak list --columns=version,name,application,size"
 alias fprm="flatpak uninstall"
 alias fpup="flatpak update"
+alias fpin="flatpak install"
 alias fpfix="flatpak repair"
 
 #
