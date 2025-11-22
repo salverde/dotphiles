@@ -20,6 +20,11 @@ alias bat="batcat"
 alias apts="sudo apt search"
 
 alias ytdl="yt-dlp_linux"
+
+alias yd="yandex-disk"
+alias yd-start="yandex-disk start"
+alias yd-stat="yandex-disk status"
+
 # flatpak
 #
 alias fp="flatpak"
