@@ -1,7 +1,7 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # BEGIN_KITTY_THEME
-# Kaolin Ocean
+# Modus Vivendi Tinted
 include current-theme.conf
 # END_KITTY_THEME
 
@@ -1730,7 +1730,7 @@ shell /usr/bin/vanilla-shell-detect
 #: See rc_custom_auth <https://sw.kovidgoyal.net/kitty/remote-
 #: control/#rc-custom-auth> for details.
 
-# allow_remote_control no
+allow_remote_control yes
 
 #: Allow other programs to control kitty. If you turn this on, other
 #: programs can control all aspects of kitty, including sending text
