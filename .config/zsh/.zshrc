@@ -1,10 +1,11 @@
-
 if [[ -n "$KITTY_INSTALLATION_DIR" ]]; then
   export KITTY_SHELL_INTEGRATION="enabled"
   autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
   kitty-integration
   unfunction kitty-integration
 fi
+
+if [ -f /etc/profile.d/vte-2.91.sh ]; then . /etc/profile.d/vte-2.91.sh; fi
 
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/home/s13e/.config/zsh/completions:"* ]]; then export FPATH="/home/s13e/.config/zsh/completions:$FPATH"; fi
@@ -94,7 +95,7 @@ ZSH_CUSTOM="$ZDOTDIR/omz-custom"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract ubuntu zsh-navigation-tools sudo fzf tldr volta copybuffer genpass copypath copyfile colored-man-pages isodate systemd zsh-completions)
+plugins=(git extract ubuntu zsh-navigation-tools sudo fzf tldr volta copybuffer genpass copypath copyfile colored-man-pages isodate systemd zsh-completions zsh-autosuggestions flatpak)
 
 source $ZSH/oh-my-zsh.sh
 
