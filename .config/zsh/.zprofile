@@ -33,3 +33,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - zsh)"
 
 eval "$(pyenv virtualenv-init -)"
+
+# add flatpak for completion of ids
+if [ -d "$HOME/.local/share/flatpak/exports/bin" ] ; then
+    PATH="$HOME/.local/share/flatpak/exports/bin:$PATH"
+fi
+
+
