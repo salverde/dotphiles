@@ -5,7 +5,7 @@ if [[ -n "$KITTY_INSTALLATION_DIR" ]]; then
   unfunction kitty-integration
 fi
 
-if [ -f /etc/profile.d/vte-2.91.sh ]; then . /etc/profile.d/vte-2.91.sh; fi
+if [ -f /etc/profile.d/vte.sh ]; then . /etc/profile.d/vte.sh; fi
 
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/home/s13e/.config/zsh/completions:"* ]]; then export FPATH="/home/s13e/.config/zsh/completions:$FPATH"; fi
