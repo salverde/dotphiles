@@ -12,3 +12,6 @@ images
 README.md
 
 .zcompdump*
+
+# do not stow plugins
+*/plug/*
