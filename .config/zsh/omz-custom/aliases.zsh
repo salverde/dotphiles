@@ -20,10 +20,12 @@ alias bat="batcat"
 alias apts="sudo apt search"
 
 alias ytdl="yt-dlp_linux"
-
 alias yd="yandex-disk"
 alias yd-start="yandex-disk start"
 alias yd-stat="yandex-disk status"
+
+alias hosh="host-shell"
+alias systui="systemd-manager-tui"
 
 # flatpak
 #
@@ -49,3 +51,11 @@ alias omzpluginfo="omz plugin info"
 alias omzplugen="omz plugin enable"
 alias omzplugs="echo $plugins"
 alias omzplugls="omz plugin list | less"
+
+alias cb='flatpak run app.getclipboard.Clipboard'
+
+#
+## podman
+alias pm="podman"
+alias podcom="podman-compose"
+
