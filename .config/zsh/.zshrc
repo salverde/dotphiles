@@ -18,6 +18,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export ALIEN_THEME="soft"
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -95,7 +97,7 @@ ZSH_CUSTOM="$ZDOTDIR/omz-custom"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract ubuntu zsh-navigation-tools sudo fzf tldr volta copybuffer genpass copypath copyfile colored-man-pages isodate systemd zsh-completions zsh-autosuggestions flatpak)
+plugins=(git extract ubuntu zsh-navigation-tools sudo fzf tldr volta copybuffer genpass copypath copyfile colored-man-pages isodate systemd zsh-completions zsh-autosuggestions flatpak podman docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
